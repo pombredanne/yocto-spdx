@@ -14,7 +14,7 @@ https://www.spdx.org.
 Licensing
 ---------
 The Yocto+SPDX code is released under the terms of the MIT license; see the
-file LICENSE in the repository root.
+file LICENSE-MIT in the repository root.
 
 (Blurb about license for supporting documentation goes here)
 
