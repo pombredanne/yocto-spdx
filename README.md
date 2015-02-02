@@ -33,6 +33,6 @@ at Omaha.
 * Thomas T. Gurney <tgurney@unomaha.edu>
 * Daniel Wright <dswright@unomaha.edu>
 * Timothy Strevey <tstrevey@unomaha.edu>
-* (other email addresses here)
+* Kevin Lumbard <klumbard@unomaha.edu>
 
 All contributions to Yocto+SPDX are subject to review before being merged.
