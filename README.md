@@ -29,6 +29,7 @@ Yocto+SPDX is currently maintained by students at the University of Nebraska
 at Omaha.
 
 * Thomas T. Gurney <tgurney@unomaha.edu>
+* Daniel Wright <dswright@unomaha.edu>
 * (other email addresses here)
 
 All contributions to Yocto+SPDX are subject to review before being merged.
