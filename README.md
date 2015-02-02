@@ -16,7 +16,9 @@ Licensing
 The Yocto+SPDX code is released under the terms of the MIT license; see the
 file LICENSE-MIT in the repository root.
 
-(Blurb about license for supporting documentation goes here)
+All supporting documentation (i.e. non-code documents) is released under the
+terms of the CC BY 3.0 US license, see the file CC-BY-3.0 in the repository
+root.
 
 Dependencies
 ------------
