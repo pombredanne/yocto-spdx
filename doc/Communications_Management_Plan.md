@@ -1,11 +1,8 @@
 #COMMUNICATIONS MANAGEMENT PLAN
 
-Project Title: 
-Yocto+SPDX
-Date 
-Prepared: 
-January 28, 2015
+Project Title: Yocto+SPDX
 
+Date Prepared: January 28, 2015
 
 | Stakeholder/Project Group     | 
 Information
@@ -48,15 +45,9 @@ Mailing List
 
 
 
-| Assumptions                                     | 
-Constraints                            |
+| Assumptions                                     | Constraints                            |
 |-------------------------------------------------|----------------------------------------|
-| 
-Urgent tag in subject line requires a response
-  | As soon as possible but it is understood that group members have other obligations 
-
-
-|
+| Urgent tag in subject line requires a response  | As soon as possible but it is understood that group members have other obligations |
 
 
 ###Glossary of Terms or Acronyms
