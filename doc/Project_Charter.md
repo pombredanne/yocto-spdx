@@ -1,39 +1,38 @@
-PROJECT CHARTER
+#PROJECT CHARTER
 
-#Project Title: UNO Yocto+SPDX
+###Project Title: UNO Yocto+SPDX
 
-Project Sponsor:
-University of Nebraska at Omaha
+###Project Sponsor: University of Nebraska at Omaha
 
-Date Prepared:
-January 28, 2015
+###Date Prepared: January 28, 2015
 
-Project Manager:
-NA
+###Project Manager: NA
 
-Project Customer:
-Yocto
+###Project Customer: Yocto
 
-Project Purpose or Justification:
+###Project Purpose or Justification:
 Yocto+SPDX is an ongoing opensource software development project.  The purpose of UNOs Yocto+SPDX group is to migrate/fork and manage the current project to a GitHub Repository and make improvements to the existing code.
 
-Project Description:
-The Software Package Data Exchange® (SPDX®) specification is a standard format for communicating the components, licenses and copyrights associated with a software package.
-Source: https://spdx.org/about-spdx/what-is-spdx
+###Project Description:
+The Software Package Data ExchangeÂ® (SPDXÂ®) specification is a standard format for communicating the components, licenses and copyrights associated with a software package.
 
-The Yocto+SPDX project is built to integrated SPDX generation into the Yocto build process. The Yocto Project is an open source collaboration project that provides templates, tools and methods to help create custom Linux-based systems for embedded products regardless of the hardware architecture (http://www.yoctoproject.org). The goal of integrating the Yocto build process with the SPDX standard is to integrate automated SPDX generation in upstream open source projects. The project was created and is hosted at the University of Nebraska at Omaha. 
-Existing features include file level caching to manage package scanning overhead, and the output of TAG format SPDX documents. Yocto+SPDX enables the generation of automated, low definition SPDX files, including package and file level information.  
-Yocto+SPDX Description Source: https://spdx.org/tools/community/yoctospdx
+SPDX Description Source: (https://spdx.org/about-spdx/what-is-spdx)
 
-High-level Project and Product Requirements:
+The Yocto+SPDX project is built to integrated SPDX generation into the Yocto build process. The Yocto Project is an open source collaboration project that provides templates, tools and methods to help create custom Linux-based systems for embedded products regardless of the hardware architecture (http://www.yoctoproject.org). The goal of integrating the Yocto build process with the SPDX standard is to integrate automated SPDX generation in upstream open source projects. The project was created and is hosted at the University of Nebraska at Omaha. 
+
+Existing features include file level caching to manage package scanning overhead, and the output of TAG format SPDX documents. Yocto+SPDX enables the generation of automated, low definition SPDX files, including package and file level information. 
+
+Yocto+SPDX Description Source: (https://spdx.org/tools/community/yoctospdx)
+
+###High-level Project and Product Requirements:
 1. Linux Development Environment
 2. Python 
 3. Fossology
 
-Summary Budget:
+###Summary Budget:
 There is no foreseeable cost for this project.
 
-Initial Risks:
+###Initial Risks:
 N/A
 
 Milestone Definitions
