@@ -1,14 +1,14 @@
 #PROJECT CHARTER
 
-###Project Title: UNO Yocto+SPDX
+Project Title: UNO Yocto+SPDX
 
-###Project Sponsor: University of Nebraska at Omaha
+Project Sponsor: University of Nebraska at Omaha
 
-###Date Prepared: January 28, 2015
+Date Prepared: January 28, 2015
 
-###Project Manager: NA
+Project Manager: NA
 
-###Project Customer: Yocto
+Project Customer: Yocto
 
 ###Project Purpose or Justification:
 Yocto+SPDX is an ongoing opensource software development project.  The purpose of UNOs Yocto+SPDX group is to migrate/fork and manage the current project to a GitHub Repository and make improvements to the existing code.
@@ -35,15 +35,15 @@ There is no foreseeable cost for this project.
 ###Initial Risks:
 N/A
 
-Milestone Definitions
+###Milestone Definitions
 Due Date
-Milestone 1 (Analysis and Design)
+####Milestone 1 (Analysis and Design)
 * Creation of initial project resources and documents
 * Git repository
 * Declare licenses
 * Supporting documents (project charter/description, milestone definitions, system service request, stakeholder registry, communication management plan, data flow diagram, database structures)
 02/02/2015
-Milestone 2 (Proof of Concept)
+####Milestone 2 (Proof of Concept)
 * System mock-up
 * Potential efforts:
 * Performance improvements
@@ -52,14 +52,14 @@ Milestone 2 (Proof of Concept)
 * General code cleanup (standards compliance/best practices)
 * Update all project documents
 03/04/2015
-Milestone 3 (Working Prototype)
+####Milestone 3 (Working Prototype)
 * Working prototype incorporating changes proposed in M2
 * Installation instructions
 * Bug tracking system populated with known bugs
 * Slide deck providing overview of system architecture
 * Update all project documents
 04/06/2015
-Milestone 4 (Advanced Prototype/Final Destination)
+####Milestone 4 (Advanced Prototype/Final Destination)
 * Finalize working prototype
 * Unit test suite
 * Critique statements / bug reporting on other systems
