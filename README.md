@@ -8,7 +8,8 @@ SPDX is a standard format for communicating information about the licenses
 and copyrights associated with a software package. More information at
 https://www.spdx.org.
 
-The Yocto+SPDX project is built to integrated SPDX generation into the Yocto build process. The Yocto Project is an open source collaboration project that provides templates, tools and methods to help create custom Linux-based systems for embedded products regardless of the hardware architecture (http://www.yoctoproject.org). The goal of integrating the Yocto build process with the SPDX standard is to integrate automated SPDX generation in upstream open source projects. The project was created and is hosted at the University of Nebraska at Omaha.
+The Yocto+SPDX project is built to integrated SPDX generation into the Yocto build process. The Yocto Project is an open source collaboration project that provides templates, tools and methods to help create custom Linux-based systems for embedded products regardless of the hardware architecture (http://www.yoctoproject.org). The goal of integrating the Yocto build process with the SPDX standard is to integrate automated SPDX generation in upstream open source projects. The project was created and is hosted at the University of Nebraska at Omaha.  More information at
+Yocto+SPDX Description Source: (https://spdx.org/tools/community/yoctospdx)
 
 
  
@@ -21,7 +22,7 @@ All supporting documentation (i.e. non-code documents) is released under the
 terms of the CC BY 3.0 US license, see the file CC-BY-3.0 in the repository
 root.
 
-Dependencies
+Software Dependencies
 ------------
 * Python 2 (https://www.python.org)
 * FOSSology (https://www.fossology.org)
