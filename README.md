@@ -37,4 +37,4 @@ at Omaha.
 * Timothy Strevey <tstrevey@unomaha.edu>
 * Kevin Lumbard <klumbard@unomaha.edu>
 
-All contributions to Yocto+SPDX are subject to review before being merged.
+All contributions to Yocto+SPDX are subject to review by UNO Yocto-SPDX project group before being merged.
