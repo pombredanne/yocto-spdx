@@ -21,8 +21,11 @@ Date Prepared: January 28, 2015
 ###Glossary of Terms or Acronyms
 
 #####Subject Headers
+
 [CSCI 4900]
-[CSCI 4900 : Urgent]   
+ 
+[CSCI 4900 : Urgent] 
+ 
 Attach relevant communication diagrams or flowcharts.
 
 
