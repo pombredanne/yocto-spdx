@@ -12,33 +12,31 @@ LOCATION: University of Nebraska at Omaha
 CONTACT: klumbard@unomaha.edu
 
 
-TYPE OF REQUEST:			URGENCY:
-
-[     ]	New System			[      ]	Immediate - Operations are impaired or
-							opportunity lost
-[  x  ]	Systems Enhancement		[  X   ]	Problems exist, but can be worked around
-[     ]	System Error Correction		[      ]	Business losses can be tolerated until new
-							system installed
-[     ]	Other				[      ]	Other
+| TYPE OF REQUEST			| URGENCY                                                                    |
+|---------------------------------------|:-------------------------------------------------------------------------:|
+|[     ]	New System		|[      ]	Immediate - Operations are impaired or opportunity lost     |
+|[  x  ]	Systems Enhancement	|[  X   ]	Problems exist, but can be worked around                    |
+|[     ]	System Error Correction	|[      ]	Business losses can be tolerated until new system installed |
+|[     ]	Other			|[      ]	Other                                                       |
 
 
 
 
-###PROBLEM STATEMENT:
+####PROBLEM STATEMENT:
 Yocto requires a Linux build environment.  Not all members of our group have access to Linux machines.  Our group requires a shared work space for work and communication.
 	 
 
-###SERVICE REQUEST:
+####SERVICE REQUEST:
 We are requesting a Linux workspace on UNO servers.
 
-###Requested Specs:
+####Requested Specs:
       Minimum of 100GB storage, preferred 500GB.
       Modern Linux system (Debian or Red Hat)
 	
 
-###IS LIAISON: Matt Germonprez
+####IS LIAISON: Matt Germonprez
 
-###SPONSOR: University of Nebraska at Omaha
+####SPONSOR: University of Nebraska at Omaha
 
 
 
