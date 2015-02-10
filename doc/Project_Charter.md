@@ -37,14 +37,13 @@ N/A
 
 ###Milestone Definitions
 
-Milestone 1 - Analysis and Design
+Milestone 1 - Analysis and Design - Due Date: 02/02/2015
 * Creation of initial project resources and documents
 * Git repository
 * Declare licenses
 * Supporting documents - project charter/description, milestone definitions, system service request, stakeholder registry, communication management plan, data flow diagram, database structures
-Due Date: 02/02/2015
 
-Milestone 2 - Proof of Concept
+Milestone 2 - Proof of Concept - Due Date: 03/04/2015
 * System mock-up
 * Potential efforts:
 * Performance improvements
@@ -52,19 +51,16 @@ Milestone 2 - Proof of Concept
 * Migrate caching functionality to a database-based solution
 * General code cleanup - standards compliance/best practices
 * Update all project documents
-Due Date: 03/04/2015
 
-Milestone 3 - Working Prototype
+Milestone 3 - Working Prototype - Due Date: 04/06/2015
 * Working prototype incorporating changes proposed in M2
 * Installation instructions
 * Bug tracking system populated with known bugs
 * Slide deck providing overview of system architecture
 * Update all project documents
-Due Date: 04/06/2015
 
-Milestone 4 - Advanced Prototype/Final Destination
+Milestone 4 - Advanced Prototype/Final Destination - Due Date: 04/29/2015
 * Finalize working prototype
 * Unit test suite
 * Critique statements / bug reporting on other systems
 * Update all project documents
-Due Date: 04/29/2015
