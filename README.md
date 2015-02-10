@@ -3,13 +3,14 @@ Yocto+SPDX
 
 Overview
 --------
-Yocto+SPDX is an SPDX document generation plugin for the Yocto Project's Poky
-build system. It adds generation of an SPDX document for the entire build as
-an extra step in the build process.
 
 SPDX is a standard format for communicating information about the licenses
 and copyrights associated with a software package. More information at
 https://www.spdx.org.
+
+The Yocto+SPDX project is built to integrated SPDX generation into the Yocto build process. The Yocto Project is an open source collaboration project that provides templates, tools and methods to help create custom Linux-based systems for embedded products regardless of the hardware architecture (http://www.yoctoproject.org). The goal of integrating the Yocto build process with the SPDX standard is to integrate automated SPDX generation in upstream open source projects. The project was created and is hosted at the University of Nebraska at Omaha.
+
+
  
 Licensing
 ---------
