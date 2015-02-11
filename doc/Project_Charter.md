@@ -45,12 +45,13 @@ Milestone 1 - Analysis and Design - Due Date: 02/02/2015
 
 Milestone 2 - Proof of Concept - Due Date: 03/04/2015
 * Update all project documents
+* Complete Yocto Build
 * System mock-up
- 
+* General code cleanup - standards compliance/best practices 
+
 #####Potential efforts:
 *   Upgrade to SPDX 2.0 standard
 *   Performance improvements - Migrate caching functionality to a database-based solution?
-*   General code cleanup - standards compliance/best practices
 
 Milestone 3 - Working Prototype - Due Date: 04/06/2015
 * Working prototype incorporating changes proposed in M2
