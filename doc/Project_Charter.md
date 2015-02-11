@@ -44,13 +44,12 @@ Milestone 1 - Analysis and Design - Due Date: 02/02/2015
 * Supporting documents - project charter/description, milestone definitions, system service request, stakeholder registry, communication management plan, data flow diagram, database structures
 
 Milestone 2 - Proof of Concept - Due Date: 03/04/2015
+* Update all project documents
 * System mock-up
 * Potential efforts:
-* Performance improvements
-* Upgrade to SPDX 2.0 standard
-* Migrate caching functionality to a database-based solution
-* General code cleanup - standards compliance/best practices
-* Update all project documents
+*   Upgrade to SPDX 2.0 standard
+*   Performance improvements - Migrate caching functionality to a database-based solution?
+*   General code cleanup - standards compliance/best practices
 
 Milestone 3 - Working Prototype - Due Date: 04/06/2015
 * Working prototype incorporating changes proposed in M2
