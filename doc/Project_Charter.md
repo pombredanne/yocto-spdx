@@ -47,7 +47,7 @@ Milestone 2 - Proof of Concept - Due Date: 03/04/2015
 * Update all project documents
 * System mock-up
  
-  Potential efforts:
+#####Potential efforts:
 *   Upgrade to SPDX 2.0 standard
 *   Performance improvements - Migrate caching functionality to a database-based solution?
 *   General code cleanup - standards compliance/best practices
