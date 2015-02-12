@@ -14,7 +14,7 @@
 
 # SPDX file will be output to the path which is defined as[SPDX_MANIFEST_DIR] 
 # in ./meta/conf/licenses.conf.
-
+# commit
 SPDXOUTPUTDIR = "${WORKDIR}/spdx_output_dir"
 SPDXSSTATEDIR = "${WORKDIR}/spdx_sstate_dir"
 
