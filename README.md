@@ -11,7 +11,6 @@ https://www.spdx.org.
 The Yocto+SPDX project is built to integrated SPDX generation into the Yocto build process. The Yocto Project is an open source collaboration project that provides templates, tools and methods to help create custom Linux-based systems for embedded products regardless of the hardware architecture (http://www.yoctoproject.org). The goal of integrating the Yocto build process with the SPDX standard is to integrate automated SPDX generation in upstream open source projects. The project was created and is hosted at the University of Nebraska at Omaha.
 Yocto+SPDX Description Source: https://spdx.org/tools/community/yoctospdx
 
-
  
 Licensing
 ---------
@@ -38,3 +37,5 @@ at Omaha.
 * Kevin Lumbard <klumbard@unomaha.edu>
 
 All contributions to Yocto+SPDX are subject to review by UNO Yocto-SPDX project group before being merged.
+
+\* Yocto+SPDX has no affiliation with the SPDX workgroup, the Yocto Project or the Linux Foundation.
