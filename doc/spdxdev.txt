@@ -1,0 +1,7 @@
+SPDX dev server
+spdxdev.ist.unomaha.edu
+
+This is the team server for running Yocto builds, local FOSSology scans and
+other processes requiring significant system resources.
+
+(more info to be added later)
