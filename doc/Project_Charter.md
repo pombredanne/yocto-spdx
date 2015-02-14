@@ -8,7 +8,7 @@ Date Prepared: January 28, 2015
 
 Project Manager: NA
 
-Project Customer: Yocto
+Project Customer: Yocto Project and SPDX communities
 
 ###Project Purpose or Justification:
 Yocto+SPDX is an ongoing opensource software development project.  The purpose of UNOs Yocto+SPDX group is to migrate/fork and manage the current project to a GitHub Repository and make improvements to the existing code.
@@ -50,8 +50,8 @@ Milestone 2 - Proof of Concept - Due Date: 03/04/2015
 * General code cleanup - standards compliance/best practices 
 
 #####Potential efforts:
-*   Upgrade to SPDX 2.0 standard
-*   Performance improvements - Migrate caching functionality to a database-based solution?
+* Upgrade to SPDX 2.0 standard
+* Performance improvements (Include migrate caching functionality to a database-based solution?)
 
 Milestone 3 - Working Prototype - Due Date: 04/06/2015
 * Working prototype incorporating changes proposed in M2
