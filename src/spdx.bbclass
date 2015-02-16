@@ -90,6 +90,7 @@ python do_spdx () {
 addtask spdx after do_patch before do_configure
 
 def create_manifest(info,header,files):
+    check_dir()
     with open(info['outfile'], 'w') as f:
         f.write(header + '\n')
         for chksum, block in files.iteritems():
@@ -97,6 +98,10 @@ def create_manifest(info,header,files):
                 f.write(key + ": " + value)
                 f.write('\n')
             f.write('\n')
+
+def check_dir():
+    if not os.path.isdir("/home/yocto/fossology_scans"):
+        os.makedirs("/home/yocto/fossology_scans")
 
 def get_cached_spdx( sstatefile ):
     import json
