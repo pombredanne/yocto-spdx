@@ -90,8 +90,8 @@ python do_spdx () {
 addtask spdx after do_patch before do_configure
 
 def check_dir():
-    if not os.path.isdir("/home/yocto/fossology_scans"):
-        os.makedirs("/home/yocto/fossology_scans")
+    if not os.path.isdir(manifest_dir):
+        os.makedirs(manifest_dir)
 
 def create_manifest(info,header,files):
     check_dir()
