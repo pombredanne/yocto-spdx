@@ -1,10 +1,5 @@
-FOSSology+SPDX Database Schema 
+Refer to https://github.com/socs-dev-env/SOCSDatabase/blob/master/SQL/SPDX.sql
+This is the current version of the SPDX database schema (for SPDX 1.2) we would
+use if we implement a database caching functionality. If (when!) we move to
+SPDX 2.0 compliance, the schema would have to be updated to reflect this.
 
-SPDX version 1.2
-
-Copyright (C) 2013 University of Nebraska at Omaha.
-
-https://github.com/spdx-tools/fossology-spdx/tree/master/db
-
-
-We will be updating this schema to represent SPDX version 2.0
