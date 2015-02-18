@@ -10,6 +10,7 @@ Date Prepared: January 28, 2015
 |UNO Yocto+SPDX Group           | Day to Day Business          | Group Email           | As needed           |
 |Yocto -                        | Project Related              | Mailing List          |                     |
 |SPDX -                         | Project Related              | Mailing List          |                     |
+|Shared Database Group - Rohith Gali (rgali@unomaha.edu), Viswanath Kambhampaty (vkambhampaty@unomaha.edu) | Database Related | Group Email | As needed |
 
 
 
