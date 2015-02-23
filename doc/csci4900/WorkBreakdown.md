@@ -20,7 +20,7 @@ Team member -
 Team member - 
 
 ###Code Submission Plan
-In order to avoid duplication or unnecessary forks, team members working on code should notify the group via email when they are working on code, unless the code was specifically assigned to that group member.   
+In order to avoid duplication, unless the code was specifically assigned to that group member, individuals should notify the group via email when they are working on code.   
 
 Analysis of new code and decisions regarding previous versions of the code will be determined by group discussion. 
 
