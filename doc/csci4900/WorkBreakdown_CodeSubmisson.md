@@ -4,7 +4,7 @@ Project Title: UNO Yocto+SPDX
 
 Project Sponsor: University of Nebraska at Omaha
 
-Date Prepared: February 23, 
+Date Prepared: February 23, 2015
 
 ###Work Breakdown Structure
 
