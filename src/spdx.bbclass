@@ -80,6 +80,8 @@ python do_spdx () {
     spdx_header_info = get_header_info(info, cur_ver_code, spdx_file_info)
     
     ## CREATE MANIFEST
+    if not os.path.isdir(manifest_dir):
+        bb.mkdirhier(manifest_dir)
     create_manifest(info,spdx_header_info,spdx_file_info)
 
     ## clean up the temp stuff
@@ -89,12 +91,7 @@ python do_spdx () {
 }
 addtask spdx after do_patch before do_configure
 
-def check_dir():
-    if not os.path.isdir(manifest_dir):
-        os.makedirs(manifest_dir)
-
 def create_manifest(info,header,files):
-    check_dir()
     with open(info['outfile'], 'w') as f:
         f.write(header + '\n')
         for chksum, block in files.iteritems():
