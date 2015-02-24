@@ -19,8 +19,8 @@ SPDXOUTPUTDIR = "${WORKDIR}/spdx_output_dir"
 SPDXSSTATEDIR = "${WORKDIR}/spdx_sstate_dir"
 
 python do_spdx () {
-    import os, sys
-    import json
+    import os
+    import sys
 
     info = {} 
     info['workdir'] = (d.getVar('WORKDIR', True) or "")
@@ -70,7 +70,6 @@ python do_spdx () {
         foss_command = "wget %s --post-file=%s %s"\
             % (foss_flags,info['tar_file'],foss_server)
         
-        #bb.warn(info['pn'] + json.dumps(local_file_info))
         foss_file_info = run_fossology( foss_command )
         spdx_file_info = create_spdx_doc( local_file_info, foss_file_info )
         ## write to cache
