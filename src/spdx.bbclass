@@ -48,9 +48,10 @@ python do_spdx () {
     create_manifest(info,spdxdata)
 
     ## clean up the temp stuff
-    remove_dir_tree( info['spdx_temp_dir'] )
-    if os.path.exists(info['tar_file']):
-        remove_file( info['tar_file'] )
+    try:
+        os.remove(info['tar_file'])
+    except OSError:
+        pass
 }
 addtask spdx after do_patch before do_configure
 
