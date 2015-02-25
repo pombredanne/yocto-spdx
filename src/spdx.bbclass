@@ -25,14 +25,9 @@ python do_spdx () {
     import subprocess
 
     info = {} 
-    info['workdir'] = (d.getVar('WORKDIR', True) or "")
     info['sourcedir'] = (d.getVar('S', True) or "")
-    info['pn'] = (d.getVar( 'PN', True ) or "")
-    info['pv'] = (d.getVar( 'PV', True ) or "")
-    info['src_uri'] = (d.getVar( 'SRC_URI', True ) or "")
     manifest_dir = (d.getVar('SPDX_MANIFEST_DIR', True) or "")
     info['outfile'] = os.path.join(manifest_dir, info['pn'] + ".spdx" )
-    info['spdx_temp_dir'] = (d.getVar('SPDX_TEMP_DIR', True) or "")
     info['tar_file'] = os.path.join( info['workdir'], info['pn'] + ".tar.gz" )
     info['dosocs'] = (d.getVar('DOSOCS_PATH', True) or "")
 
