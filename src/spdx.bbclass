@@ -17,10 +17,12 @@
 
 SPDXOUTPUTDIR = "${WORKDIR}/spdx_output_dir"
 SPDXSSTATEDIR = "${WORKDIR}/spdx_sstate_dir"
+DOSOCS_PATH = "/home/tgurney/DoSOCS/DoSOCS/DoSPDX.py"
 
 python do_spdx () {
     import os
     import sys
+    import subprocess
 
     info = {} 
     info['workdir'] = (d.getVar('WORKDIR', True) or "")
@@ -28,36 +30,22 @@ python do_spdx () {
     info['pn'] = (d.getVar( 'PN', True ) or "")
     info['pv'] = (d.getVar( 'PV', True ) or "")
     info['src_uri'] = (d.getVar( 'SRC_URI', True ) or "")
-    info['spdx_version'] = (d.getVar('SPDX_VERSION', True) or '')
-    info['data_license'] = (d.getVar('DATA_LICENSE', True) or '')
-
-    spdx_sstate_dir = (d.getVar('SPDXSSTATEDIR', True) or "")
     manifest_dir = (d.getVar('SPDX_MANIFEST_DIR', True) or "")
     info['outfile'] = os.path.join(manifest_dir, info['pn'] + ".spdx" )
-    sstatefile = os.path.join(spdx_sstate_dir, 
-        info['pn'] + info['pv'] + ".spdx" )
     info['spdx_temp_dir'] = (d.getVar('SPDX_TEMP_DIR', True) or "")
     info['tar_file'] = os.path.join( info['workdir'], info['pn'] + ".tar.gz" )
+    info['dosocs'] = (d.getVar('DOSOCS_PATH', True) or "")
 
+    setup_foss_scan( info, False, None )
 
-    local_file_info = setup_foss_scan( info, False, None )
+    dosocs_cmdline = [info['dosocs'], '--scan', '-p', info['tar_file'],
+                        '--scanOption', 'fossology', '--print', 'json']
+    spdxdata = subprocess.check_output(dosocs_cmdline)
 
-    ## setup fossology command
-    foss_server = (d.getVar('FOSS_SERVER', True) or "")
-    foss_flags = (d.getVar('FOSS_WGET_FLAGS', True) or "")
-    foss_command = "wget %s --post-file=%s %s"\
-        % (foss_flags,info['tar_file'],foss_server)
-        
-    foss_file_info = run_fossology( foss_command )
-    spdx_file_info = create_spdx_doc( local_file_info, foss_file_info )
-    
-    ## Get document and package level information
-    spdx_header_info = get_header_info(info, cur_ver_code, spdx_file_info)
-    
     ## CREATE MANIFEST
     if not os.path.isdir(manifest_dir):
         bb.mkdirhier(manifest_dir)
-    create_manifest(info,spdx_header_info,spdx_file_info)
+    create_manifest(info,spdxdata)
 
     ## clean up the temp stuff
     remove_dir_tree( info['spdx_temp_dir'] )
@@ -66,14 +54,9 @@ python do_spdx () {
 }
 addtask spdx after do_patch before do_configure
 
-def create_manifest(info,header,files):
+def create_manifest(info, spdxdata):
     with open(info['outfile'], 'w') as f:
-        f.write(header + '\n')
-        for chksum, block in files.iteritems():
-            for key, value in block.iteritems():
-                f.write(key + ": " + value)
-                f.write('\n')
-            f.write('\n')
+        f.write(spdxdata + '\n')
 
 def setup_foss_scan( info, cache, cached_files ):
     import errno, shutil
