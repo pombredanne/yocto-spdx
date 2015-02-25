@@ -40,40 +40,16 @@ python do_spdx () {
     info['tar_file'] = os.path.join( info['workdir'], info['pn'] + ".tar.gz" )
 
 
-    ## get everything from cache.  use it to decide if 
-    ## something needs to be rerun 
-    cur_ver_code = get_ver_code( info['sourcedir'] ) 
-    cache_cur = False
-    if not os.path.exists( spdx_sstate_dir ):
-        bb.mkdirhier( spdx_sstate_dir )
-    if not os.path.exists( info['spdx_temp_dir'] ):
-        bb.mkdirhier( info['spdx_temp_dir'] )
-    if os.path.exists( sstatefile ):
-        ## cache for this package exists. read it in
-        cached_spdx = get_cached_spdx( sstatefile )
+    local_file_info = setup_foss_scan( info, False, None )
 
-        if cached_spdx['PackageVerificationCode'] == cur_ver_code:
-            bb.warn(info['pn'] + "'s ver code same as cache's. do nothing")
-            cache_cur = True
-        else:
-            local_file_info = setup_foss_scan( info, 
-                True, cached_spdx['Files'] )
-    else:
-        local_file_info = setup_foss_scan( info, False, None )
-
-    if cache_cur:
-        spdx_file_info = cached_spdx['Files']
-    else:
-        ## setup fossology command
-        foss_server = (d.getVar('FOSS_SERVER', True) or "")
-        foss_flags = (d.getVar('FOSS_WGET_FLAGS', True) or "")
-        foss_command = "wget %s --post-file=%s %s"\
-            % (foss_flags,info['tar_file'],foss_server)
+    ## setup fossology command
+    foss_server = (d.getVar('FOSS_SERVER', True) or "")
+    foss_flags = (d.getVar('FOSS_WGET_FLAGS', True) or "")
+    foss_command = "wget %s --post-file=%s %s"\
+        % (foss_flags,info['tar_file'],foss_server)
         
-        foss_file_info = run_fossology( foss_command )
-        spdx_file_info = create_spdx_doc( local_file_info, foss_file_info )
-        ## write to cache
-        write_cached_spdx(sstatefile,cur_ver_code,spdx_file_info)
+    foss_file_info = run_fossology( foss_command )
+    spdx_file_info = create_spdx_doc( local_file_info, foss_file_info )
     
     ## Get document and package level information
     spdx_header_info = get_header_info(info, cur_ver_code, spdx_file_info)
@@ -98,25 +74,6 @@ def create_manifest(info,header,files):
                 f.write(key + ": " + value)
                 f.write('\n')
             f.write('\n')
-
-def get_cached_spdx( sstatefile ):
-    import json
-    cached_spdx_info = {}
-    with open( sstatefile, 'r' ) as f:
-        try:
-            cached_spdx_info = json.load(f)
-        except ValueError as e:
-            cached_spdx_info = None
-    return cached_spdx_info
-
-def write_cached_spdx( sstatefile, ver_code, files ):
-    import json
-    spdx_doc = {}
-    spdx_doc['PackageVerificationCode'] = ver_code
-    spdx_doc['Files'] = {}
-    spdx_doc['Files'] = files
-    with open( sstatefile, 'w' ) as f:
-        f.write(json.dumps(spdx_doc))
 
 def setup_foss_scan( info, cache, cached_files ):
     import errno, shutil
