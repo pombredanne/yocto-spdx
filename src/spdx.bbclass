@@ -36,7 +36,7 @@ python do_spdx () {
     info['tar_file'] = os.path.join( info['workdir'], info['pn'] + ".tar.gz" )
     info['dosocs'] = (d.getVar('DOSOCS_PATH', True) or "")
 
-    setup_foss_scan( info, False, None )
+    create_tarball(info)
 
     dosocs_cmdline = [info['dosocs'], '--scan', '-p', info['tar_file'],
                         '--scanOption', 'fossology', '--print', 'json']
@@ -58,56 +58,10 @@ def create_manifest(info, spdxdata):
     with open(info['outfile'], 'w') as f:
         f.write(spdxdata + '\n')
 
-def setup_foss_scan( info, cache, cached_files ):
-    import errno, shutil
+def create_tarball(info):
     import tarfile
-    file_info = {}
-    cache_dict = {}
-
-    for f_dir, f in list_files( info['sourcedir'] ):
-        full_path =  os.path.join( f_dir, f )
-        abs_path = os.path.join(info['sourcedir'], full_path)
-        dest_dir = os.path.join( info['spdx_temp_dir'], f_dir )
-        dest_path = os.path.join( info['spdx_temp_dir'], full_path )
-        try:
-            stats = os.stat(abs_path)
-        except OSError as e:
-            bb.warn( "Stat failed" + str(e) + "\n")
-            continue
-
-        checksum = hash_file( abs_path )
-        mtime = time.asctime(time.localtime(stats.st_mtime))
-        
-        ## retain cache information if it exists
-        file_info[checksum] = {}
-        if cache and checksum in cached_files:
-            file_info[checksum] = cached_files[checksum]
-        else:
-            file_info[checksum]['FileName'] = full_path
-
-        try:
-            os.makedirs( dest_dir )
-        except OSError as e:
-            if e.errno == errno.EEXIST and os.path.isdir(dest_dir):
-                pass
-            else:
-                bb.warn( "mkdir failed " + str(e) + "\n" )
-                continue
-
-        if(cache and checksum not in cached_files) or not cache:
-            try:
-                shutil.copyfile( abs_path, dest_path )
-            except shutil.Error as e:
-                bb.warn( str(e) + "\n" )
-            except IOError as e:
-                bb.warn( str(e) + "\n" )
-    
-    with tarfile.open( info['tar_file'], "w:gz" ) as tar:
-        tar.add( info['spdx_temp_dir'], arcname=os.path.basename(info['spdx_temp_dir']) )
-    tar.close()
-    
-    return file_info
-
+    with tarfile.open( info['tar_file'], "w:gz" ) as t:
+        t.add(info['sourcedir'], arcname=os.path.basename(info['sourcedir']))
 
 def remove_dir_tree( dir_name ):
     import shutil
