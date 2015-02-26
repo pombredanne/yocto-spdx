@@ -1,12 +1,9 @@
 # This class integrates real-time license scanning, generation of SPDX standard
 # output and verifiying license info during the building process.
-# It is a combination of efforts from the OE-Core, SPDX and Fossology projects.
+# It is a combination of efforts from the OE-Core, SPDX and DoSOCS projects.
 #
-# For more information on FOSSology:
-#   http://www.fossology.org
-#
-# For more information on FOSSologySPDX commandline:
-#   https://github.com/spdx-tools/fossology-spdx/wiki/Fossology-SPDX-Web-API
+# For more information on DoSOCS:
+#   https://github.com/socs-dev-env/DoSOCS
 #
 # For more information on SPDX:
 #   http://www.spdx.org
