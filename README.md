@@ -30,52 +30,11 @@ terms of the CC BY 3.0 US license, see the file CC-BY-3.0 in the repository
 root.
 
 
-Software Dependencies
----------------------
-* Python 2 (https://www.python.org)
-* FOSSology (https://www.fossology.org)
-
-
 Installation Instructions
 -------------------------
 
-These instructions cover building a minimal OS image using Yocto Project's
-Poky build system with the SPDX plugin enabled. They assume you already know
-how to use Poky to create an OS image using the out-of-the-box settings.
+Refer to INSTALL.md in the repository root.
 
-Clone the Yocto+SPDX repository if you haven't already:
-
-    $ git clone https://github.com/ttgurney/yocto-spdx
-
-Follow the usual steps to clone the Poky repository:
-
-    $ git clone http://git.yoctoproject.org/git/poky
-    $ cd poky
-    $ git checkout -b dizzy origin/dizzy
-
-Copy the `spdx.bbclass` code into the `poky/meta/classes` directory,
-overwriting the existing file before you switch to the build environment:
-
-    $ cp ../yocto-spdx/src/spdx.bbclass meta/classes
-    $ source oe-init-build-env
-
-If you want, open up the `meta/conf/licenses.conf` file to set relevant
-variables:
-
-* `SPDX_TEMP_DIR`: location of the temporary directory for the SPDX plugin
-* `SPDX_MANIFEST_DIR`: output directory for the finished SPDX documents
-* `FOSS_SERVER`: FOSSology server to connect to (used for scanning packages
-  to gather license information)
-
-Finally, you need to add "spdx" to the variable `USER_CLASSES` in the
-`build/conf/local.conf` file, to enable the `do_spdx` process step.
-
-When you invoke `bitbake` to create the image:
-
-    $ bitbake -k core-image-minimal
-
-the step of creating an SPDX document will be performed for each package,
-right after the `do_patch` step.
 
 Maintainers
 -----------
