@@ -22,37 +22,34 @@ python do_spdx () {
     import subprocess
 
     info = {} 
-    info['sourcedir'] = (d.getVar('S', True) or "")
+    sourcedir = (d.getVar('S', True) or "")
     manifest_dir = (d.getVar('SPDX_MANIFEST_DIR', True) or "")
-    info['outfile'] = os.path.join(manifest_dir, info['pn'] + ".spdx" )
-    info['tar_file'] = os.path.join( info['workdir'], info['pn'] + ".tar.gz" )
-    info['dosocs'] = (d.getVar('DOSOCS_PATH', True) or "")
+    outfile = os.path.join(manifest_dir, info['pn'] + ".spdx" )
+    tar_file = os.path.join( info['workdir'], info['pn'] + ".tar.gz" )
+    dosocs = (d.getVar('DOSOCS_PATH', True) or "")
 
     create_tarball(info)
 
-    dosocs_cmdline = [info['dosocs'], '--scan', '-p', info['tar_file'],
+    dosocs_cmdline = [dosocs, '--scan', '-p', tar_file,
                         '--scanOption', 'fossology', '--print', 'json']
     spdxdata = subprocess.check_output(dosocs_cmdline)
 
     ## CREATE MANIFEST
     if not os.path.isdir(manifest_dir):
         bb.mkdirhier(manifest_dir)
-    create_manifest(info,spdxdata)
+    with open(outfile, 'w') as f:
+        f.write(spdxdata + '\n')
 
     ## clean up the temp stuff
     try:
-        os.remove(info['tar_file'])
+        os.remove(tar_file)
     except OSError:
         pass
 }
 addtask spdx after do_patch before do_configure
 
-def create_manifest(info, spdxdata):
-    with open(info['outfile'], 'w') as f:
-        f.write(spdxdata + '\n')
-
-def create_tarball(info):
+def create_tarball(tar_file, sourcedir):
     import tarfile
-    with tarfile.open( info['tar_file'], "w:gz" ) as t:
-        t.add(info['sourcedir'], arcname=os.path.basename(info['sourcedir']))
+    with tarfile.open(tar_file, "w:gz" ) as t:
+        t.add(sourcedir, arcname=os.path.basename(sourcedir'))
 
