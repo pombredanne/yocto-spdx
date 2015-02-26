@@ -21,11 +21,12 @@ python do_spdx () {
     import sys
     import subprocess
 
-    info = {} 
+    workdir = (d.getVar('WORKDIR', True) or "")
     sourcedir = (d.getVar('S', True) or "")
     manifest_dir = (d.getVar('SPDX_MANIFEST_DIR', True) or "")
-    outfile = os.path.join(manifest_dir, info['pn'] + ".spdx" )
-    tar_file = os.path.join( info['workdir'], info['pn'] + ".tar.gz" )
+    pn = (d.getVar('PN', True) or "")
+    outfile = os.path.join(manifest_dir, pn + ".spdx")
+    tar_file = os.path.join(workdir, pn + ".tar.gz")
     dosocs = (d.getVar('DOSOCS_PATH', True) or "")
 
     create_tarball(info)
