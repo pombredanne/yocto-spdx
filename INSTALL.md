@@ -31,13 +31,13 @@ overwriting the existing file before you switch to the build environment:
     $ cp ../yocto-spdx/src/spdx.bbclass meta/classes
     $ source oe-init-build-env
 
-If you want, open up the `meta/conf/licenses.conf` file to set relevant
-variables:
+Open up the `meta/conf/licenses.conf` file to set relevant variables:
 
-* `SPDX_TEMP_DIR`: location of the temporary directory for the SPDX plugin
 * `SPDX_MANIFEST_DIR`: output directory for the finished SPDX documents
-* `FOSS_SERVER`: FOSSology server to connect to (used for scanning packages
-  to gather license information)
+* `DOOCS_PATH`: location of DoSOCS executable (probably called `DoSPDX.py`)
+* `DOSOCS_FLAGS`: Flags passed to DoSOCS. The default is sane and assumes you
+  that DoSOCS is using FOSSology as a license scanner. Refer to the DoSOCS
+  documentation.
 
 Finally, you need to add "spdx" to the variable `USER_CLASSES` in the
 `build/conf/local.conf` file, to enable the `do_spdx` process step.
