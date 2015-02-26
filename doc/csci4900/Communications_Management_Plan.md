@@ -29,3 +29,7 @@ Date Prepared: January 28, 2015
  
 Attach relevant communication diagrams or flowcharts.
 
+###Meetings
+
+12:00pm Thursdays in the Open Source Lab
+
