@@ -15,6 +15,9 @@ Preconditions:
 Trigger:
 User starts a build, e.g. with "bitbake -k [image name]"
 
+Basic flow:
+No user action is required after the trigger.
+
 Failure cases:
 - DoSOCS not correctly set up (e.g. no license scanner, wrong database
   user name / password)
