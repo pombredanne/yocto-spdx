@@ -35,7 +35,7 @@ Open up the `meta/conf/licenses.conf` file to set relevant variables:
 
 * `SPDX_MANIFEST_DIR`: output directory for the finished SPDX documents
 * `DOOCS_PATH`: location of DoSOCS executable (probably called `DoSPDX.py`)
-* `DOSOCS_FLAGS`: Flags passed to DoSOCS. The default is sane and assumes you
+* `DOSOCS_FLAGS`: Flags passed to DoSOCS. The default is sane and assumes
   that DoSOCS is using FOSSology as a license scanner. Refer to the DoSOCS
   documentation.
 
