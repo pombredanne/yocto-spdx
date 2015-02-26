@@ -14,17 +14,18 @@ provides templates, tools and methods to help create custom Linux-based systems
 for embedded products regardless of the hardware architecture.
 (http://www.yoctoproject.org). 
 
-The original Yocto+SPDX project was built to integrate SPDX generation into the Yocto build
-process. The goal of integrating the Yocto build process with the SPDX standard 
-is to integrate automated SPDX generation in upstream open source projects. 
-The project was created and is hosted at the University of Nebraska at Omaha.  
-Yocto+SPDX Description Source:
+The original Yocto+SPDX project was built to integrate SPDX generation into the
+Yocto build process. The goal of integrating the Yocto build process with the
+SPDX standard is to integrate automated SPDX generation in upstream open source
+projects.  The project was created and is hosted at the University of Nebraska
+at Omaha.  Yocto+SPDX Description Source:
 (https://spdx.org/tools/community/yoctospdx)
 
-This iteration of Yocto+SPDX removes some of the functionality from the original Yocto+SPDX project code
-and replaces it with DoSOCS.
-DoSOCS is a command line tool that processes software packages into SPDX documents. DoSOCS scans and prints SPDX documents and uses a MySQL database for caching and storage.
-(https://github.com/socs-dev-env/DoSOCS)
+This iteration of Yocto+SPDX removes some of the functionality from the
+original Yocto+SPDX project code and replaces it with DoSOCS.  DoSOCS is a
+command line tool that processes software packages into SPDX documents. DoSOCS
+scans and prints SPDX documents and uses a MySQL database for caching and
+storage.  (https://github.com/socs-dev-env/DoSOCS)
 
 Licensing
 ---------
