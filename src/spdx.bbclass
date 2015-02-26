@@ -29,7 +29,7 @@ python do_spdx () {
     tar_file = os.path.join(workdir, pn + ".tar.gz")
     dosocs = (d.getVar('DOSOCS_PATH', True) or "")
 
-    create_tarball(info)
+    create_tarball(tar_file, sourcedir)
 
     dosocs_cmdline = [dosocs, '--scan', '-p', tar_file,
                         '--scanOption', 'fossology', '--print', 'json']
