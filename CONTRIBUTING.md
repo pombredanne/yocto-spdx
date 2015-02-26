@@ -1,15 +1,16 @@
 ##Yocto+SPDX Code Submission Policy
 
+Contributions to the UNOs Yocto+SPDX Project are welcome.  
 
-Contributions to the UNOs Yocto+SPDX Project are very welcome.  There are three ways to submit code to Yocto-SPDX Group.
+There are three ways to submit code to Yocto-SPDX Group.
 
-1. The preferred method for code submission is to fork the Yocto-SPDX repository and issue a pull request to submit code.  Code will be reviewed by UNO Yocto+SPDX group before being merged.
+1. The preferred method for code submission is to fork the Yocto-SPDX repository using GitHub. A pull request should be issued to submit code.  Code will be reviewed by UNO Yocto+SPDX group before being merged.
 For help with pull requests: (https://help.github.com/articles/using-pull-requests/)
 For general help see: (https://help.github.com/articles/good-resources-for-learning-git-and-github/)
 
 2. The second method is to contact the repositories maintainers via email. Email addresses for the current project maintainers are located in the project ReadMe file: (https://github.com/ttgurney/yocto-spdx/blob/master/README.md). Code will be reviewed by UNO Yocto+SPDX group before being merged. 
 
-3. The last method is to petition UNO Yocto+SPDX for direct access to the Yocto-SPDX GitHub repository. This method will be considered for regular contributers who have show the abilty to work with in the community. To submit this request, please contact the project maintainers by email.
+3. The last method is to petition UNO Yocto+SPDX for direct access to the Yocto-SPDX GitHub repository. This method will be considered for regular contributers who have shown the abilty to work with-in the community. To submit this request, please contact the project maintainers by email.
 
 ###All patch submissions require documentation.
 
