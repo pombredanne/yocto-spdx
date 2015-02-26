@@ -51,5 +51,5 @@ addtask spdx after do_patch before do_configure
 def create_tarball(tar_file, sourcedir):
     import tarfile
     with tarfile.open(tar_file, "w:gz" ) as t:
-        t.add(sourcedir, arcname=os.path.basename(sourcedir'))
+        t.add(sourcedir, arcname=os.path.basename(sourcedir))
 
