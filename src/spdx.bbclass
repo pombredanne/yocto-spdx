@@ -37,7 +37,7 @@ python do_spdx () {
 
     ## CREATE MANIFEST
     if not os.path.isdir(manifest_dir):
-        bb.mkdirhier(manifest_dir)
+        bb.utils.mkdirhier(manifest_dir)
     with open(outfile, 'w') as f:
         f.write(spdxdata + '\n')
 
