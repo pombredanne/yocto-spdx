@@ -14,7 +14,6 @@
 
 SPDXOUTPUTDIR = "${WORKDIR}/spdx_output_dir"
 SPDXSSTATEDIR = "${WORKDIR}/spdx_sstate_dir"
-DOSOCS_PATH = "/home/tgurney/DoSOCS/DoSOCS/DoSPDX.py"
 
 python do_spdx () {
     import os
@@ -54,4 +53,3 @@ def create_tarball(tar_file, sourcedir):
     import tarfile
     with tarfile.open(tar_file, "w:gz" ) as t:
         t.add(sourcedir, arcname=os.path.basename(sourcedir))
-
