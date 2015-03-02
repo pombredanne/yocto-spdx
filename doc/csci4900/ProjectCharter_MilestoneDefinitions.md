@@ -11,37 +11,22 @@ Project Manager: NA
 Project Customer: Yocto Project and SPDX communities
 
 ###Project Purpose or Justification:
-Yocto+SPDX is an ongoing opensource software development project.  The purpose
-of UNOs Yocto+SPDX group is to migrate/fork and manage the current project to a
-GitHub Repository and make improvements to the existing code.
+To create a Yocto plug-in that creates SPDX documents.
 
 ###Project Description:
-The Software Package Data Exchange® (SPDX®) specification is a standard format
-for communicating the components, licenses and copyrights associated with a
-software package.
 
-SPDX Description Source: (https://spdx.org/about-spdx/what-is-spdx)
+SPDX is a standard format for communicating information about the licenses and copyrights associated with a software package. (https://www.spdx.org)
 
-The Yocto+SPDX project is built to integrated SPDX generation into the Yocto
-build process. The Yocto Project is an open source collaboration project that
-provides templates, tools and methods to help create custom Linux-based systems
-for embedded products regardless of the hardware architecture
-(http://www.yoctoproject.org). The goal of integrating the Yocto build process
-with the SPDX standard is to integrate automated SPDX generation in upstream
-open source projects. The project was created and is hosted at the University
-of Nebraska at Omaha.
+The Yocto Project is an open source collaboration project that provides templates, tools and methods to help create custom Linux-based systems for embedded products regardless of the hardware architecture. (http://www.yoctoproject.org).
 
-Existing features include file level caching to manage package scanning
-overhead, and the output of TAG format SPDX documents. Yocto+SPDX enables the
-generation of automated, low definition SPDX files, including package and file
-level information.
+The original Yocto+SPDX project was built to integrate SPDX generation into the Yocto build process. The goal of integrating the Yocto build process with the SPDX standard is to integrate automated SPDX generation in upstream open source projects. The project was created and is hosted at the University of Nebraska at Omaha. Yocto+SPDX Description Source: (https://spdx.org/tools/community/yoctospdx)
 
-Yocto+SPDX Description Source: (https://spdx.org/tools/community/yoctospdx)
+This iteration of Yocto+SPDX removes some of the functionality from the original Yocto+SPDX project code and replaces it with DoSOCS. DoSOCS is a command line tool that processes software packages into SPDX documents. DoSOCS scans and prints SPDX documents and uses a MySQL database for caching and storage. (https://github.com/socs-dev-env/DoSOCS)
 
 ###High-level Project and Product Requirements:
 1. Linux Development Environment
 2. Python
-3. Fossology
+3. DoSOCS
 
 ###Summary Budget:
 There is no foreseeable cost for this project.
@@ -59,17 +44,14 @@ Milestone 1 - Analysis and Design - Due Date: 02/02/2015
 
 Milestone 2 - Proof of Concept - Due Date: 03/04/2015
 * Update all project documents
-* Complete Yocto Build
-* System mock-up
+* Create Use-Case
+* Rewrite Yocto plug-in to integrate DoSOCS
+* Complete Yocto Build with SPDX plug-in enabled
 * General code cleanup - standards compliance/best practices
-
-#####Potential efforts:
-* Upgrade to SPDX 2.0 standard
-* Performance improvements (Include migrate caching functionality to a database-based solution?)
+* Create Installation instructions and screenshots
 
 Milestone 3 - Working Prototype - Due Date: 04/06/2015
 * Working prototype incorporating changes proposed in M2
-* Installation instructions
 * Bug tracking system populated with known bugs
 * Slide deck providing overview of system architecture
 * Update all project documents
