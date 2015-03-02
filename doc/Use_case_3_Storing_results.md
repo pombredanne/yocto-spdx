@@ -12,4 +12,4 @@ store the resulting documents in a database.
 **Basic Flow:** For each resulting SPDX 2.0 document check if the document already exists in the database.
 If it doesn't already exists upload the document to the database.
 
-**Alternate Flow:** If they user for some reason doesn't want to upload documents skip this step.
+**Alternate Flow:** If the user for some reason doesn't want to upload documents skip this step.
