@@ -11,13 +11,14 @@ Project Manager: NA
 Project Customer: Yocto Project and SPDX communities
 
 ###Project Purpose or Justification:
-To create a Yocto plug-in that creates SPDX documents.
+
+An open-source license communicates the terms by which software or source code can be used. In open-source development, software and source code is often combined from multiple sources.  These sources often use different licenses. Developers need a way to track license information in order to understand their usage obligations.  
 
 ###Project Description:
 
 SPDX is a standard format for communicating information about the licenses and copyrights associated with a software package. (https://www.spdx.org)
 
-The Yocto Project is an open source collaboration project that provides templates, tools and methods to help create custom Linux-based systems for embedded products regardless of the hardware architecture. (http://www.yoctoproject.org).
+The Yocto Project is an open-source collaboration project that provides templates, tools and methods to help create custom Linux-based systems for embedded products regardless of the hardware architecture. (http://www.yoctoproject.org).
 
 The original Yocto+SPDX project was built to integrate SPDX generation into the Yocto build process. The goal of integrating the Yocto build process with the SPDX standard is to integrate automated SPDX generation in upstream open source projects. The project was created and is hosted at the University of Nebraska at Omaha. Yocto+SPDX Description Source: (https://spdx.org/tools/community/yoctospdx)
 
