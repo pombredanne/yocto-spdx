@@ -25,10 +25,11 @@ Follow the usual steps to clone the Poky repository:
     $ cd poky
     $ git checkout -b dizzy origin/dizzy
 
-Copy the `spdx.bbclass` code into the `poky/meta/classes` directory,
-overwriting the existing file before you switch to the build environment:
+Copy the `spdx.bbclass` and `licenses.conf` files into the poky source tree, 
+overwriting the existing files before you switch to the build environment:
 
     $ cp ../yocto-spdx/src/spdx.bbclass meta/classes
+    $ cp ../yocto-spd/src/licenses.conf meta/conf
     $ source oe-init-build-env
 
 Open up the `meta/conf/licenses.conf` file to set relevant variables:
