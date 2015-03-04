@@ -20,7 +20,7 @@ will be considered for regular contributors who have shown the abilty to work
 within the community. To make this request, please contact the maintainers by
 email.
 
-#All patch submissions require documentation.
+####All patch submissions require documentation.
 
 For each commit, provide a single-line summary of the change, and in the body
 of the commit message, provide a detailed description of what you did. The only
