@@ -10,23 +10,25 @@ Project Manager: NA
 
 Project Customer: Yocto Project and SPDX communities
 
-###Project Purpose or Justification:
+###Project Purpose and Justification:
 
-An open-source license communicates the terms by which software or source code can be used. In open-source development, software and source code is often combined from multiple sources.  These sources often use different licenses. Developers need a way to track license information in order to understand their usage obligations.  
+Embedded OS images created using the Yocto Project build process can
+potentially contain an enormous number of open source packages, each
+accompanied by a license that communicates the terms by which the software can
+be used. Groups who create and distribute these OS images, as well as the users
+of these images, face challenges in determining what their obligations are when
+they distribute and/or use the software contained within.
 
 ###Project Description:
 
-SPDX is a standard format for communicating information about the licenses and copyrights associated with a software package. (https://www.spdx.org)
-
-The Yocto Project is an open-source collaboration project that provides templates, tools and methods to help create custom Linux-based systems for embedded products regardless of the hardware architecture. (http://www.yoctoproject.org).
-
-The original Yocto+SPDX project was built to integrate SPDX generation into the Yocto build process. The goal of integrating the Yocto build process with the SPDX standard is to integrate automated SPDX generation in upstream open source projects. The project was created and is hosted at the University of Nebraska at Omaha. Yocto+SPDX Description Source: (https://spdx.org/tools/community/yoctospdx)
-
-This iteration of Yocto+SPDX removes some of the functionality from the original Yocto+SPDX project code and replaces it with DoSOCS. DoSOCS is a command line tool that processes software packages into SPDX documents. DoSOCS scans and prints SPDX documents and uses a MySQL database for caching and storage. (https://github.com/socs-dev-env/DoSOCS)
+Yocto+SPDX aims to simplify the gathering of license information for the many
+packages in a typical OS built using Yocto Project by seamlessly integrating
+SPDX document generation into the build process. More information can be found
+in README.md in the repository root.
 
 ###High-level Project and Product Requirements:
-1. Linux Development Environment
-2. Python
+1. Linux
+2. Python 2.7
 3. DoSOCS
 
 ###Summary Budget:
@@ -41,7 +43,9 @@ Milestone 1 - Analysis and Design - Due Date: 02/02/2015
 * Creation of initial project resources and documents
 * Git repository
 * Declare licenses
-* Supporting documents - project charter/description, milestone definitions, system service request, stakeholder registry, communication management plan, data flow diagram, database structures
+* Supporting documents - project charter/description, milestone definitions,
+  system service request, stakeholder registry, communication management plan,
+  data flow diagram, database structures
 
 Milestone 2 - Proof of Concept - Due Date: 03/04/2015
 * Update all project documents
@@ -49,7 +53,7 @@ Milestone 2 - Proof of Concept - Due Date: 03/04/2015
 * Rewrite Yocto plug-in to integrate DoSOCS
 * Complete Yocto Build with SPDX plug-in enabled
 * General code cleanup - standards compliance/best practices
-* Create Installation instructions and screenshots
+* Create installation instructions and screenshots
 
 Milestone 3 - Working Prototype - Due Date: 04/06/2015
 * Working prototype incorporating changes proposed in M2
