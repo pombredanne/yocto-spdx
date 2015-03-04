@@ -13,14 +13,14 @@ general help see:
 2. The second method is to contact the maintainers via email.  Email addresses
 for the current project maintainers are found in the README file
 (https://github.com/ttgurney/yocto-spdx/blob/master/README.md).  Code will be
-reviewed by the UNO Yocto+SPDX group before being merged. 
+reviewed by the maintainers before being merged. 
 
-3. The last method is to ask for direct access to the Yocto-SPDX GitHub
-repository. This method will be considered for regular contributors who have
-shown the abilty to work within the community. To make this request, please
-contact the project maintainers by email.
+3. The last method is to ask for commit access to the repository. This method
+will be considered for regular contributors who have shown the abilty to work
+within the community. To make this request, please contact the maintainers by
+email.
 
-###All patch submissions require documentation.
+#All patch submissions require documentation.
 
 For each commit, provide a single-line summary of the change, and in the body
 of the commit message, provide a detailed description of what you did. The only
