@@ -14,11 +14,11 @@ templates, tools and methods to help create custom Linux-based systems for
 embedded products regardless of the hardware architecture.
 (http://www.yoctoproject.org). 
 
-The original Yocto+SPDX project was written by Liang Cao and Jake Cloyd and was
-hosted at the University of Nebraska Omaha.  The current incarnation of
-Yocto+SPDX removes much of the complexity from the original project and
-replaces it with DoSOCS.  DoSOCS is a command line tool that creates and prints
-SPDX documents and uses a MySQL database for caching and storage.
+The original Yocto+SPDX was written by Liang Cao and Jake Cloyd and was hosted
+at the University of Nebraska Omaha.  The current incarnation of Yocto+SPDX
+removes much of the complexity from the original project and replaces it with
+DoSOCS.  DoSOCS is a command line tool that creates and prints SPDX documents
+and uses a MySQL database for caching and storage.
 (https://github.com/socs-dev-env/DoSOCS)
 
 
