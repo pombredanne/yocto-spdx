@@ -1,4 +1,4 @@
-###Use Case Number: 4
+###Use Case Number: 3
 
 **Use Case Name:** Use a different SPDX document output format.
 
