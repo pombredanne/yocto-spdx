@@ -20,6 +20,13 @@ will be considered for regular contributors who have shown the abilty to work
 within the community. To make this request, please contact the maintainers by
 email.
 
+##Copyright and licensing
+
+Contributors retain the copyright associated with their contributions. However,
+all code contributions shall be licensed under the terms of the MIT license,
+and all documentation contributions shall be licensed under the CC BY 3.0
+license.
+
 ####All patch submissions require documentation.
 
 For each commit, provide a single-line summary of the change, and in the body
@@ -31,7 +38,7 @@ If the change addresses a specific issue in the GitHub issue tracker, include a
 reference to the issue ID in your detailed description.  Example commit
 message:
 
-     Fixes [Yocto-SPDX #<bug-id>]
+     Fixes [yocto-spdx #<bug-id>]
 
      <detailed description of change>
 
