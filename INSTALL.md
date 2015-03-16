@@ -29,7 +29,7 @@ Copy the `spdx.bbclass` and `licenses.conf` files into the poky source tree,
 overwriting the existing files before you switch to the build environment:
 
     $ cp ../yocto-spdx/src/spdx.bbclass meta/classes
-    $ cp ../yocto-spd/src/licenses.conf meta/conf
+    $ cp ../yocto-spdx/src/licenses.conf meta/conf
     $ source oe-init-build-env
 
 Your current directory will automagically switch to `./build`.
