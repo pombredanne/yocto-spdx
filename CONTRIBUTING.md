@@ -20,7 +20,7 @@ will be considered for regular contributors who have shown the abilty to work
 within the community. To make this request, please contact the maintainers by
 email.
 
-##Copyright and licensing
+####Copyright and licensing
 
 Contributors retain the copyright associated with their contributions. However,
 all code contributions shall be licensed under the terms of the MIT license,
