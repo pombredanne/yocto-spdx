@@ -20,7 +20,7 @@ python do_spdx () {
     import sys
     import subprocess
 
-    default_flags = '--scanOption fossology'
+    default_flags = '--scanOption fossology --print json'
     workdir = (d.getVar('WORKDIR', True) or "")
     sourcedir = (d.getVar('S', True) or "")
     manifest_dir = (d.getVar('SPDX_MANIFEST_DIR', True) or "")
@@ -28,21 +28,22 @@ python do_spdx () {
     outfile = os.path.join(manifest_dir, pn + ".spdx")
     tar_file = os.path.join(workdir, pn + ".tar.gz")
     dosocs = (d.getVar('DOSOCS_PATH', True) or "")
-    ##flags = (d.getVar('DOSOCS_FLAGS', True) or default_flags)
+    flags = (d.getVar('DOSOCS_FLAGS', True) or default_flags)
     
-    document_comment = d.getVar('DOCUMENT_COMMENT')
-    creator = d.getVar('CREATOR')
-    creator_comment = d.getVar('CREATOR_COMMENT')
-    print_format = d.getVar('PRINT_FORMAT')
-    flags = ""
+    # WIP
+    #document_comment = d.getVar('DOCUMENT_COMMENT')
+    #creator = d.getVar('CREATOR')
+    #creator_comment = d.getVar('CREATOR_COMMENT')
+    #print_format = d.getVar('PRINT_FORMAT')
+    #flags = ""
     
-    if( document_comment == "true" )
-        flags += ' --documentComment "' + d.getVar('D_COMMENT') + '"'
-    if( creator == "true" )
-        flags += ' --creator "' + d.getVar('CREATOR_NAME') + '"'
-    if( creator_comment == "true" )
-        flags += ' --creatorComment "' + d.getVar('C_COMMENT') + '"'
-    flags += ' --print ' + print_format
+    #if( document_comment == "true" )
+    #    flags += ' --documentComment "' + d.getVar('D_COMMENT') + '"'
+    #if( creator == "true" )
+    #    flags += ' --creator "' + d.getVar('CREATOR_NAME') + '"'
+    #if( creator_comment == "true" )
+    #    flags += ' --creatorComment "' + d.getVar('C_COMMENT') + '"'
+    #flags += ' --print ' + print_format
     
 
     create_tarball(tar_file, sourcedir)
