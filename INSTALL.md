@@ -50,19 +50,3 @@ When you invoke `bitbake` to create the image:
 
 the step of creating an SPDX document will be performed for each package,
 right after the `do_patch` step.
-
-Maintainers
------------
-Yocto+SPDX is currently maintained by students at the University of Nebraska
-at Omaha.
-
-* Thomas T. Gurney <tgurney@unomaha.edu>
-* Daniel Wright <dswright@unomaha.edu>
-* Timothy Strevey <tstrevey@unomaha.edu>
-* Kevin Lumbard <klumbard@unomaha.edu>
-
-All contributions to Yocto+SPDX are subject to review by UNO Yocto-SPDX
-project group before being merged.
-
-\* Yocto+SPDX has no affiliation with the SPDX workgroup, the Yocto Project or
-the Linux Foundation.
