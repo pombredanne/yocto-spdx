@@ -28,13 +28,13 @@ python do_spdx () {
     outfile = os.path.join(manifest_dir, pn + ".spdx")
     tar_file = os.path.join(workdir, pn + ".tar.gz")
     dosocs = (d.getVar('DOSOCS_PATH', True) or "")
-    flags = (d.getVar('DOSOCS_FLAGS', True) or default_flags)
+    ##flags = (d.getVar('DOSOCS_FLAGS', True) or default_flags)
     
     document_comment = d.getVar('DOCUMENT_COMMENT')
     creator = d.getVar('CREATOR')
     creator_comment = d.getVar('CREATOR_COMMENT')
     print_format = d.getVar('PRINT_FORMAT')
-    new flags = ""
+    flags = ""
     
     if( document_comment == "true" )
         flags += ' --documentComment "' + d.getVar('D_COMMENT') + '"'
