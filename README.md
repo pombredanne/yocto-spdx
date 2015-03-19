@@ -22,14 +22,16 @@ and uses a MySQL database for caching and storage.
 (https://github.com/socs-dev-env/DoSOCS)
 
 
-Licensing
----------
+Licensing and Copyright
+-----------------------
 The Yocto+SPDX code is released under the terms of the MIT license; see the
 file LICENSE-MIT in the repository root.
 
 All supporting documentation (i.e. non-code documents) is released under the
 terms of the CC BY 3.0 US license, see the file CC-BY-3.0 in the repository
 root.
+
+Copyright (c) 2015 Yocto+SPDX contributors.
 
 
 Installation Instructions
