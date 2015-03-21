@@ -1,5 +1,7 @@
-# This class integrates real-time license scanning, generation of SPDX standard
-# output and verifiying license info during the building process.
+# SPDX plugin for Yocto Project ('Yocto-SPDX')
+#
+# This class integrates real-time license scanning and generation of SPDX
+# into the build process.
 # It is a combination of efforts from the OE-Core, SPDX and DoSOCS projects.
 #
 # For more information on DoSOCS:
@@ -7,6 +9,8 @@
 #
 # For more information on SPDX:
 #   http://www.spdx.org
+#
+# Copyright (c) 2015 Yocto-SPDX contributors.
 #
 
 # SPDX file will be output to the path which is defined as[SPDX_MANIFEST_DIR] 
