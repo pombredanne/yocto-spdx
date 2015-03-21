@@ -12,6 +12,8 @@
 #
 # Copyright (c) 2015 Yocto-SPDX contributors.
 #
+# SPDX-License-Identifier: MIT
+#
 
 # SPDX file will be output to the path which is defined as[SPDX_MANIFEST_DIR] 
 # in ./meta/conf/licenses.conf.
