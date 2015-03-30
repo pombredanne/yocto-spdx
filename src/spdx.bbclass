@@ -44,13 +44,14 @@ python do_spdx () {
     ccomment = d.getVar('CREATOR_COMMENT') or ""
     print_format = d.getVar('PRINT_FORMAT') or ""
 
+    flags += ' --print ' + print_format
     if( document_comment == "true" ):
         flags += ' --documentComment "' + dcomment + '"'
     if( creator == "true") :
         flags += ' --creator "' + cname + '"'
     if( creator_comment == "true" ):
         flags += ' --creatorComment "' + ccomment + '"'
-    flags += ' --print ' + print_format
+    
     
     create_tarball(tar_file, sourcedir)
 
