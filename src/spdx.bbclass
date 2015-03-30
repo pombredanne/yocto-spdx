@@ -36,21 +36,20 @@ python do_spdx () {
     dosocs = (d.getVar('DOSOCS_PATH', True) or "")
     flags = (d.getVar('DOSOCS_FLAGS', True) or default_flags)
     
-    # WIP
-    #document_comment = d.getVar('DOCUMENT_COMMENT')
-    #creator = d.getVar('CREATOR')
-    #creator_comment = d.getVar('CREATOR_COMMENT')
-    #print_format = d.getVar('PRINT_FORMAT')
-    #flags = ""
-    
-    #if( document_comment == "true" )
-    #    flags += ' --documentComment "' + d.getVar('D_COMMENT') + '"'
-    #if( creator == "true" )
-    #    flags += ' --creator "' + d.getVar('CREATOR_NAME') + '"'
-    #if( creator_comment == "true" )
-    #    flags += ' --creatorComment "' + d.getVar('C_COMMENT') + '"'
-    #flags += ' --print ' + print_format
-    
+    document_comment = d.getVar('USE_DOCUMENT_COMMENT') or ""
+    creator = d.getVar('USE_CREATOR') or ""
+    creator_comment = d.getVar('USE_CREATOR_COMMENT') or ""
+    cname = d.getVar('CREATOR') or ""
+    dcomment = d.getVar('DOCUMENT_COMMENT') or ""
+    ccomment = d.getVar('CREATOR_COMMENT') or ""
+    print_format = d.getVar('PRINT_FORMAT') or ""
+
+    if( document_comment == "true" ):
+        flags += ' --documentComment "' + dcomment + '"'
+    if( creator == "true") :
+        flags += ' --creator "' + cname + '"'
+    if( creator_comment == "true" ):
+        flags += ' --creatorComment "' + ccomment + '"'
 
     create_tarball(tar_file, sourcedir)
 
