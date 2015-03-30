@@ -26,7 +26,7 @@ python do_spdx () {
     import sys
     import subprocess
 
-    default_flags = '--scanOption fossology --print json'
+    default_flags = '--scanOption fossology'
     workdir = (d.getVar('WORKDIR', True) or "")
     sourcedir = (d.getVar('S', True) or "")
     manifest_dir = (d.getVar('SPDX_MANIFEST_DIR', True) or "")
@@ -50,7 +50,8 @@ python do_spdx () {
         flags += ' --creator "' + cname + '"'
     if( creator_comment == "true" ):
         flags += ' --creatorComment "' + ccomment + '"'
-
+    flags += ' --print ' + print_format
+    
     create_tarball(tar_file, sourcedir)
 
     dosocs_cmdline = [dosocs, '--scan', '-p', tar_file] + flags.split()
