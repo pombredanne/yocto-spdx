@@ -44,18 +44,24 @@ python do_spdx () {
     ccomment = d.getVar('CREATOR_COMMENT') or ""
     print_format = d.getVar('PRINT_FORMAT') or ""
 
-    flags += ' --print ' + print_format
+    flags += " --print " + print_format
+    CLA = flags.split()
+
     if( document_comment == "true" ):
-        flags += ' --documentComment "' + dcomment + '"'
+        CLA.append( '--documentComment')
+        CLA.append(  dcomment )
     if( creator == "true") :
-        flags += ' --creator "' + cname + '"'
+        CLA.append( '--creator' )
+        CLA.append( cname )
     if( creator_comment == "true" ):
-        flags += ' --creatorComment "' + ccomment + '"'
+        CLA.append( '--creatorComment')
+        CLA.append(  ccomment )
+
     
     
     create_tarball(tar_file, sourcedir)
 
-    dosocs_cmdline = [dosocs, '--scan', '-p', tar_file] + flags.split()
+    dosocs_cmdline = [dosocs, '--scan', '-p', tar_file] + CLA
     spdxdata = subprocess.check_output(dosocs_cmdline)
 
     ## CREATE MANIFEST
