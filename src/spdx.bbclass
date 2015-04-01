@@ -34,12 +34,12 @@ python do_spdx () {
     pn = d.getVar('PN', True) or '' 
     outfile = os.path.join(manifest_dir, pn + ".spdx")
     tar_file = os.path.join(workdir, pn + ".tar.gz")
-    dosocs = d.getVar('DOSOCS_PATH', True) or ''
+    dosocs = d.getVar('SPDX_DOSOCS_PATH', True) or ''
 
-    cname = d.getVar('CREATOR') or None
-    document_comment = d.getVar('DOCUMENT_COMMENT') or None
-    creator_comment = d.getVar('CREATOR_COMMENT') or None
-    print_format = d.getVar('PRINT_FORMAT') or 'json'
+    cname = d.getVar('SPDX_CREATOR') or None
+    document_comment = d.getVar('SPDX_DOCUMENT_COMMENT') or None
+    creator_comment = d.getVar('SPDX_CREATOR_COMMENT') or None
+    print_format = d.getVar('SPDX_PRINT_FORMAT') or 'json'
 
     flags += " --print " + print_format
     cla = flags.split()
