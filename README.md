@@ -33,6 +33,11 @@ root.
 
 Copyright (c) 2015 Yocto+SPDX contributors.
 
+Tested System Specifications
+-------------------------
+Ubuntu 12.04
+4 core CPU 16GB Ram
+Intel core I5
 
 Installation Instructions
 -------------------------
