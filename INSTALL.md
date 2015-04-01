@@ -37,9 +37,10 @@ Open up the `../meta/conf/licenses.conf` file to set relevant variables:
 
 * `SPDX_MANIFEST_DIR`: output directory for the finished SPDX documents
 * `DOSOCS_PATH`: location of DoSOCS executable (probably called `DoSPDX.py`)
-* `DOSOCS_FLAGS`: Flags passed to DoSOCS. The default is sane and assumes
-  that you want to use FOSSology as a license scanner. Refer to the DoSOCS
-  documentation for a description of the available flags.
+* `SPDX_DOCUMENT_COMMENT`: uncomment and set to the desired document comment
+* `SPDX_CREATOR_COMMENT`: uncomment and set to the desired creator comment
+* `SPDX_CREATOR`: uncomment and set to the desired creator name
+* `SPDX_PRINT_FORMAT`: desired print format for DoSOCS valid options are json, tag, and rdf
 
 Finally, you need to add "spdx" to the variable `USER_CLASSES` in the
 `build/conf/local.conf` file, to enable the `do_spdx` process step.
