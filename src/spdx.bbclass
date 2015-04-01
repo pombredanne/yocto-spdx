@@ -25,6 +25,7 @@ python do_spdx () {
     import os
     import sys
     import subprocess
+    import tarfile
 
     default_flags = '--scanOption fossology'
     workdir = (d.getVar('WORKDIR', True) or "")
@@ -57,7 +58,8 @@ python do_spdx () {
         cla.append('--creatorComment')
         cla.append(ccomment)
 
-    create_tarball(tar_file, sourcedir)
+    with tarfile.open(tar_file, "w:gz" ) as t:
+        t.add(sourcedir, arcname=os.path.basename(sourcedir))
 
     dosocs_cmdline = [dosocs, '--scan', '-p', tar_file] + cla
     spdxdata = subprocess.check_output(dosocs_cmdline)
@@ -75,8 +77,3 @@ python do_spdx () {
         pass
 }
 addtask spdx after do_patch before do_configure
-
-def create_tarball(tar_file, sourcedir):
-    import tarfile
-    with tarfile.open(tar_file, "w:gz" ) as t:
-        t.add(sourcedir, arcname=os.path.basename(sourcedir))
