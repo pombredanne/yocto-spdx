@@ -22,21 +22,20 @@ SPDXOUTPUTDIR = "${WORKDIR}/spdx_output_dir"
 SPDXSSTATEDIR = "${WORKDIR}/spdx_sstate_dir"
 
 python do_spdx () {
-    import os
     import sys
     import subprocess
     import tarfile
 
     flags = '--scanOption fossology'
-    workdir = d.getVar('WORKDIR', True) or '' 
-    sourcedir = d.getVar('S', True) or '' 
+    workdir = d.getVar('WORKDIR', True) or ''
+    sourcedir = d.getVar('S', True) or ''
     manifest_dir = d.getVar('SPDX_MANIFEST_DIR', True) or ''
-    pn = d.getVar('PN', True) or '' 
+    pn = d.getVar('PN', True) or ''
     outfile = os.path.join(manifest_dir, pn + ".spdx")
     tar_file = os.path.join(workdir, pn + ".tar.gz")
     dosocs = d.getVar('SPDX_DOSOCS_PATH', True) or ''
 
-    cname = d.getVar('SPDX_CREATOR') or None
+    creator = d.getVar('SPDX_CREATOR') or None
     document_comment = d.getVar('SPDX_DOCUMENT_COMMENT') or None
     creator_comment = d.getVar('SPDX_CREATOR_COMMENT') or None
     print_format = d.getVar('SPDX_PRINT_FORMAT') or 'json'
@@ -47,29 +46,62 @@ python do_spdx () {
     if document_comment is not None:
         cla.append('--documentComment')
         cla.append(document_comment)
-    if cname is not None:
+    if creator is not None:
         cla.append('--creator')
-        cla.append(cname)
-    if creator_comment is not None: 
+        cla.append(creator)
+    if creator_comment is not None:
         cla.append('--creatorComment')
         cla.append(creator_comment)
 
     with tarfile.open(tar_file, "w:gz" ) as t:
-        t.add(sourcedir, arcname=os.path.basename(sourcedir))
+        try:
+            t.add(sourcedir, arcname=os.path.basename(sourcedir))
+        except OSError as e:
+            bb.error('do_spdx: Failed to write to file ' + tar_file +
+            ': ' + e.strerror
+            )
+            return 1
 
     dosocs_cmdline = [dosocs, '--scan', '-p', tar_file] + cla
-    spdxdata = subprocess.check_output(dosocs_cmdline)
+    try:
+        spdxdata = subprocess.check_output(dosocs_cmdline)
+    except subprocess.CalledProcessError as e:
+        bb.error('do_spdx: DoSOCS returned exit status ' + str(e.returncode))
+        if e.output:
+            bb.error('do_spdx: DoSOCS output: ')
+            bb.error(e.output)
+        return 1
+    except OSError as e:
+        bb.error('do_spdx: Failed to call process ' + dosocs +
+        ': ' + e.strerror
+        )
+        return 1
 
     ## CREATE MANIFEST
     if not os.path.isdir(manifest_dir):
-        bb.utils.mkdirhier(manifest_dir)
+        try:
+            bb.utils.mkdirhier(manifest_dir)
+        except OSError as e:
+            bb.error('do_spdx: failed to create output dir ' + manifest_dir +
+            ': ' + e.strerror
+            )
+            return 1
     with open(outfile, 'w') as f:
-        f.write(spdxdata + '\n')
+        try:
+            f.write(spdxdata + '\n')
+        except OSError as e:
+            bb.error('do_spdx: failed to write to ' + outfile +
+            ': ' + e.strerror
+            )
+            return 1
+
 
     ## clean up the temp stuff
     try:
         os.remove(tar_file)
-    except OSError:
-        pass
+    except OSError as e:
+        bb.warn('do_spdx: failed to remove temp tar file ' + tar_file +
+                ': ' + e.strerror
+                )
 }
 addtask spdx after do_patch before do_configure
