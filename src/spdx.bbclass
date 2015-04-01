@@ -28,32 +28,29 @@ python do_spdx () {
     import tarfile
 
     flags = '--scanOption fossology'
-    workdir = (d.getVar('WORKDIR', True) or "")
-    sourcedir = (d.getVar('S', True) or "")
-    manifest_dir = (d.getVar('SPDX_MANIFEST_DIR', True) or "")
-    pn = (d.getVar('PN', True) or "")
+    workdir = d.getVar('WORKDIR', True) or '' 
+    sourcedir = d.getVar('S', True) or '' 
+    manifest_dir = d.getVar('SPDX_MANIFEST_DIR', True) or ''
+    pn = d.getVar('PN', True) or '' 
     outfile = os.path.join(manifest_dir, pn + ".spdx")
     tar_file = os.path.join(workdir, pn + ".tar.gz")
-    dosocs = (d.getVar('DOSOCS_PATH', True) or "")
+    dosocs = d.getVar('DOSOCS_PATH', True) or ''
 
-    document_comment = d.getVar('USE_DOCUMENT_COMMENT') or ''
-    creator = d.getVar('USE_CREATOR') or False
-    creator_comment = d.getVar('USE_CREATOR_COMMENT') or ''
-    cname = d.getVar('CREATOR') or ''
-    dcomment = d.getVar('DOCUMENT_COMMENT') or ''
-    ccomment = d.getVar('CREATOR_COMMENT') or ''
+    cname = d.getVar('CREATOR') or None
+    dcomment = d.getVar('DOCUMENT_COMMENT') or None
+    ccomment = d.getVar('CREATOR_COMMENT') or None
     print_format = d.getVar('PRINT_FORMAT') or 'json'
 
     flags += " --print " + print_format
     cla = flags.split()
 
-    if document_comment == "true":
+    if document_comment is not None:
         cla.append('--documentComment')
         cla.append(dcomment)
-    if creator == "true":
+    if cname is not None:
         cla.append('--creator')
         cla.append(cname)
-    if creator_comment == "true":
+    if creator_comment is not None: 
         cla.append('--creatorComment')
         cla.append(ccomment)
 
