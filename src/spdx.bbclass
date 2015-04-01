@@ -37,8 +37,8 @@ python do_spdx () {
     dosocs = d.getVar('DOSOCS_PATH', True) or ''
 
     cname = d.getVar('CREATOR') or None
-    dcomment = d.getVar('DOCUMENT_COMMENT') or None
-    ccomment = d.getVar('CREATOR_COMMENT') or None
+    document_comment = d.getVar('DOCUMENT_COMMENT') or None
+    creator_comment = d.getVar('CREATOR_COMMENT') or None
     print_format = d.getVar('PRINT_FORMAT') or 'json'
 
     flags += " --print " + print_format
@@ -46,13 +46,13 @@ python do_spdx () {
 
     if document_comment is not None:
         cla.append('--documentComment')
-        cla.append(dcomment)
+        cla.append(document_comment)
     if cname is not None:
         cla.append('--creator')
         cla.append(cname)
     if creator_comment is not None: 
         cla.append('--creatorComment')
-        cla.append(ccomment)
+        cla.append(creator_comment)
 
     with tarfile.open(tar_file, "w:gz" ) as t:
         t.add(sourcedir, arcname=os.path.basename(sourcedir))
