@@ -58,7 +58,6 @@ Milestone 2 - Proof of Concept - Due Date: 03/04/2015
 Milestone 3 - Working Prototype - Due Date: 04/06/2015
 * Working prototype incorporating changes proposed in M2
 * Bug tracking system populated with known bugs
-* Slide deck providing overview of system architecture
 * Update all project documents
 
 Milestone 4 - Advanced Prototype/Final Destination - Due Date: 04/29/2015
