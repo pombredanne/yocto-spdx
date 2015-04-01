@@ -27,7 +27,7 @@ python do_spdx () {
     import subprocess
     import tarfile
 
-    default_flags = '--scanOption fossology'
+    flags = '--scanOption fossology'
     workdir = (d.getVar('WORKDIR', True) or "")
     sourcedir = (d.getVar('S', True) or "")
     manifest_dir = (d.getVar('SPDX_MANIFEST_DIR', True) or "")
@@ -35,7 +35,6 @@ python do_spdx () {
     outfile = os.path.join(manifest_dir, pn + ".spdx")
     tar_file = os.path.join(workdir, pn + ".tar.gz")
     dosocs = (d.getVar('DOSOCS_PATH', True) or "")
-    flags = (d.getVar('DOSOCS_FLAGS', True) or default_flags)
 
     document_comment = d.getVar('USE_DOCUMENT_COMMENT') or ''
     creator = d.getVar('USE_CREATOR') or False
