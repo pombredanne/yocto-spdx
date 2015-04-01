@@ -13,13 +13,13 @@ User is about to kick off a build when they realize they don't want their
 SPDX documents to be in JSON format.
 
 **Basic flow:**
-In the `licenses.conf` file, replace `--print json` with either `--print tag`
-or `--print rdf` depending on the desired format.  Then kick off the build
+In the `licenses.conf` file, replace `PRINT_FORMAT json` with either `PRINT_FORMAT tag`
+or `PRINT_FORMAT rdf` depending on the desired format.  Then kick off the build
 (e.g. in the build directory run `bitbake -k <image name>`).
 
 **Failure cases:**
 Same as those for Use Case 1, plus the case where the user introduces an
-error when modifying the `DOSOCS_FLAGS` variable.
+error when modifying the `PRINT_FORMAT` variable.
 
 **Main Success Scenario:**
 Same as Use Case 1, except all produced SPDX documents are in the new specified
