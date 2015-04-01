@@ -15,7 +15,7 @@
 # SPDX-License-Identifier: MIT
 #
 
-# SPDX file will be output to the path which is defined as[SPDX_MANIFEST_DIR] 
+# SPDX file will be output to the path which is defined as[SPDX_MANIFEST_DIR]
 # in ./meta/conf/licenses.conf.
 
 SPDXOUTPUTDIR = "${WORKDIR}/spdx_output_dir"
@@ -35,33 +35,31 @@ python do_spdx () {
     tar_file = os.path.join(workdir, pn + ".tar.gz")
     dosocs = (d.getVar('DOSOCS_PATH', True) or "")
     flags = (d.getVar('DOSOCS_FLAGS', True) or default_flags)
-    
-    document_comment = d.getVar('USE_DOCUMENT_COMMENT') or ""
-    creator = d.getVar('USE_CREATOR') or ""
-    creator_comment = d.getVar('USE_CREATOR_COMMENT') or ""
-    cname = d.getVar('CREATOR') or ""
-    dcomment = d.getVar('DOCUMENT_COMMENT') or ""
-    ccomment = d.getVar('CREATOR_COMMENT') or ""
-    print_format = d.getVar('PRINT_FORMAT') or ""
+
+    document_comment = d.getVar('USE_DOCUMENT_COMMENT') or ''
+    creator = d.getVar('USE_CREATOR') or False
+    creator_comment = d.getVar('USE_CREATOR_COMMENT') or ''
+    cname = d.getVar('CREATOR') or ''
+    dcomment = d.getVar('DOCUMENT_COMMENT') or ''
+    ccomment = d.getVar('CREATOR_COMMENT') or ''
+    print_format = d.getVar('PRINT_FORMAT') or 'json'
 
     flags += " --print " + print_format
-    CLA = flags.split()
+    cla = flags.split()
 
-    if( document_comment == "true" ):
-        CLA.append( '--documentComment')
-        CLA.append(  dcomment )
-    if( creator == "true") :
-        CLA.append( '--creator' )
-        CLA.append( cname )
-    if( creator_comment == "true" ):
-        CLA.append( '--creatorComment')
-        CLA.append(  ccomment )
+    if document_comment == "true":
+        cla.append('--documentComment')
+        cla.append(dcomment)
+    if creator == "true":
+        cla.append('--creator')
+        cla.append(cname)
+    if creator_comment == "true":
+        cla.append('--creatorComment')
+        cla.append(ccomment)
 
-    
-    
     create_tarball(tar_file, sourcedir)
 
-    dosocs_cmdline = [dosocs, '--scan', '-p', tar_file] + CLA
+    dosocs_cmdline = [dosocs, '--scan', '-p', tar_file] + cla
     spdxdata = subprocess.check_output(dosocs_cmdline)
 
     ## CREATE MANIFEST
