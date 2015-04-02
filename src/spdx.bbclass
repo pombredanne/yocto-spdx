@@ -40,7 +40,7 @@ python do_spdx () {
     creator_comment = d.getVar('SPDX_CREATOR_COMMENT') or None
     print_format = d.getVar('SPDX_PRINT_FORMAT') or 'json'
 
-    if( print_format != 'json' and  print_format != 'tag' and print_format != 'rdf'):
+    if print_format not in ('json', 'tag', 'rdf'):
         print_format = 'json'
 
     flags += " --print " + print_format
