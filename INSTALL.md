@@ -34,7 +34,8 @@ poky source tree before you switch to the build environment:
 Your current directory will automagically switch to `./build`.
 Open up the `../meta/conf/licenses.conf` file to set relevant variables:
 
-* `SPDX_MANIFEST_DIR`: output directory for the finished SPDX documents
+* `SPDX_MANIFEST_DIR`: output directory for the finished SPDX documents.
+  This will be created for you if it does not already exist.
 * `SPDX_DOSOCS_PATH`: location of DoSOCS executable (probably called
   `DoSPDX.py`)
 
