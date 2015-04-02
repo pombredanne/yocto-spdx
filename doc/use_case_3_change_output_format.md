@@ -13,8 +13,8 @@ User is about to kick off a build when they realize they don't want their
 SPDX documents to be in JSON format.
 
 **Basic flow:**
-In the `licenses.conf` file, replace `PRINT_FORMAT json` with either `PRINT_FORMAT tag`
-or `PRINT_FORMAT rdf` depending on the desired format.  Then kick off the build
+In the `licenses.conf` file, replace `SPDX_PRINT_FORMAT=json` with either `SPDX_PRINT_FORMAT=tag`
+or `SPDX_PRINT_FORMAT=rdf` depending on the desired format.  Then kick off the build
 (e.g. in the build directory run `bitbake -k <image name>`).
 
 **Failure cases:**
