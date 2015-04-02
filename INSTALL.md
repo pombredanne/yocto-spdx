@@ -42,7 +42,8 @@ Open up the `../meta/conf/licenses.conf` file to set relevant variables:
   This will be created for you if it does not already exist. Note that
   you may not have permission to write to the default path; to be safe
   you can change this to something like `$HOME/spdx_output` where
-  `$HOME` is your home directory.
+  `$HOME` is your home directory. You need to specify it explicitly
+  (like `/home/tgurney`) since variables like `$HOME` will not be expanded!
 * `SPDX_DOSOCS_PATH`: path to DoSOCS executable (probably called
   `DoSPDX.py`)
 
