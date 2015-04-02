@@ -6,7 +6,11 @@
 to use RDF or "tag" format instead.
 
 **Preconditions:**
-All of those required for Use Case 1.
+- DoSOCS installed and configured
+- Poky build system downloaded and configured
+- Yocto+SPDX installed, with bitbake variable `DOSOCS_PATH` set to the
+  location of the DoSOCS executable and `USER_CLASSES` updated to include
+  "spdx"
 
 **Trigger:**
 User is about to kick off a build when they realize they don't want their
