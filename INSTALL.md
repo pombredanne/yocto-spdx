@@ -25,25 +25,21 @@ Follow the usual steps to clone the Poky repository:
     $ cd poky
     $ git checkout -b dizzy origin/dizzy
 
-Copy the `spdx.bbclass` and `licenses.conf` files into the poky source tree, 
-overwriting the existing files before you switch to the build environment:
+Run the `install.sh` script to copy the Yocto+SPDX source files into the
+poky source tree before you switch to the build environment:
 
-    $ cp ../yocto-spdx/src/spdx.bbclass meta/classes
-    $ cp ../yocto-spdx/src/licenses.conf meta/conf
+    $ ../yocto-spdx/install.sh .
     $ source oe-init-build-env
 
 Your current directory will automagically switch to `./build`.
 Open up the `../meta/conf/licenses.conf` file to set relevant variables:
 
 * `SPDX_MANIFEST_DIR`: output directory for the finished SPDX documents
-* `DOSOCS_PATH`: location of DoSOCS executable (probably called `DoSPDX.py`)
-* `SPDX_DOCUMENT_COMMENT`: uncomment and set to the desired document comment
-* `SPDX_CREATOR_COMMENT`: uncomment and set to the desired creator comment
-* `SPDX_CREATOR`: uncomment and set to the desired creator name
-* `SPDX_PRINT_FORMAT`: desired print format for DoSOCS valid options are json, tag, and rdf
+* `SPDX_DOSOCS_PATH`: location of DoSOCS executable (probably called
+  `DoSPDX.py`)
 
 Finally, you need to add "spdx" to the variable `USER_CLASSES` in the
-`build/conf/local.conf` file, to enable the `do_spdx` process step.
+`conf/local.conf` file, to enable the `do_spdx` process step.
 
 When you invoke `bitbake` to create the image:
 
