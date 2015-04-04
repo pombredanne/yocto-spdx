@@ -8,7 +8,6 @@ how to use Poky to create an OS image using the out-of-the-box settings.
 First you need to make sure all dependencies are installed.
 Yocto+SPDX depends on:
 * DoSOCS (https://github.com/socs-dev-env/DoSOCS)
-* Python 2.7 (https://www.python.org)
 
 Installation instructions for DoSOCS are beyond the scope of this document,
 but important parts are making sure that it points to a license scanner
