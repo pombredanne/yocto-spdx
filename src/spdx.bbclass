@@ -15,12 +15,6 @@
 # SPDX-License-Identifier: MIT
 #
 
-# SPDX file will be output to the path which is defined as[SPDX_MANIFEST_DIR]
-# in ./meta/conf/licenses.conf.
-
-SPDXOUTPUTDIR = "${WORKDIR}/spdx_output_dir"
-SPDXSSTATEDIR = "${WORKDIR}/spdx_sstate_dir"
-
 python do_spdx () {
     import sys
     import subprocess
@@ -35,10 +29,10 @@ python do_spdx () {
     tar_file = os.path.join(workdir, pn + ".tar.gz")
     dosocs = d.getVar('SPDX_DOSOCS_PATH', True) or ''
 
-    creator = d.getVar('SPDX_CREATOR') or None
-    document_comment = d.getVar('SPDX_DOCUMENT_COMMENT') or None
-    creator_comment = d.getVar('SPDX_CREATOR_COMMENT') or None
-    print_format = d.getVar('SPDX_PRINT_FORMAT') or 'json'
+    creator = d.getVar('SPDX_CREATOR', True) or None
+    document_comment = d.getVar('SPDX_DOCUMENT_COMMENT', True) or None
+    creator_comment = d.getVar('SPDX_CREATOR_COMMENT', True) or None
+    print_format = d.getVar('SPDX_PRINT_FORMAT', True) or 'json'
 
     if print_format not in ('json', 'tag', 'rdf'):
         print_format = 'json'
@@ -97,7 +91,6 @@ python do_spdx () {
             ': ' + e.strerror
             )
             return 1
-
 
     ## clean up the temp stuff
     try:
