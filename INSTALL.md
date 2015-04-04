@@ -35,7 +35,7 @@ repo is at `../yocto-spdx`.
     $ ../yocto-spdx/install.sh .
     $ source oe-init-build-env
 
-Your current directory will automagically switch to `./build`.
+Your current directory will automatically switch to `./build`.
 Open up the `../meta/conf/licenses.conf` file to set relevant variables:
 
 * `SPDX_MANIFEST_DIR`: output directory for the finished SPDX documents.
